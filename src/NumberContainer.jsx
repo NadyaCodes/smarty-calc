@@ -39,14 +39,29 @@ export default function NumberContainer() {
       <div className="calc-container">
         <div className="number-container">{numbersBlock}</div>
         <div className="symbols-container">{symbosBlock}</div>
+        <button onClick={() => calc(equation, setTotal)} className="vertical">
+          =
+        </button>
+        <button onClick={() => resetTotal()} className="vertical">
+          <div>C</div>
+          <div>L</div>
+          <div>E</div>
+          <div>A</div>
+          <div>R</div>
+        </button>
       </div>
-      <div>{equation.length > 1 && equation[0] === 0 && equation.slice(1)}</div>
-      <div>{equation.length > 1 && equation[0] !== 0 && equation}</div>
-      <div>{equation.length === 1 && equation[0] === 0 && "---"}</div>
-      <div>{equation.length === 0 && "---"}</div>
-      <button onClick={() => calc(equation, setTotal)}>=</button>
+      <div className="equation">
+        {equation.length > 1 && equation[0] === 0 && equation.slice(1)}
+      </div>
+      <div className="equation">
+        {equation.length > 1 && equation[0] !== 0 && equation}
+      </div>
+      <div className="equation">
+        {equation.length === 1 && equation[0] === 0 && "---"}
+      </div>
+      <div className="equation">{equation.length === 0 && "---"}</div>
+
       <h2>Total: {total}</h2>
-      <button onClick={() => resetTotal()}>C</button>
     </div>
   );
 }
