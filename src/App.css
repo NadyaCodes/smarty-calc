@@ -46,3 +46,19 @@ button {
   font-size: xx-large;
   margin-top: 2rem;
 }
+
+.back {
+  background-color: rgb(241, 87, 87);
+}
+
+.clear {
+  background-color: rgb(176, 108, 239);
+}
+
+.random {
+  background-color: rgb(49, 240, 49);
+}
+
+.equals {
+  background-color: rgb(173, 255, 50);
+}

@@ -40,23 +40,46 @@ export default function NumberContainer() {
     setEquation(newArray);
   };
 
+  const randomSym = () => {
+    const totalNums = [...numbersArray, ...symbolsArray];
+    let symbolIndex = 0;
+    if (symbolsArray.includes(equation[equation.length - 1])) {
+      symbolIndex = Math.floor(Math.random() * numbersArray.length);
+    } else {
+      symbolIndex = Math.floor(Math.random() * totalNums.length);
+    }
+    return setEquation([...equation, totalNums[symbolIndex]]);
+  };
+
   return (
     <div>
       <div className="calc-container">
         <div className="number-container">{numbersBlock}</div>
         <div className="symbols-container">{symbosBlock}</div>
-        <button className="vertical" onClick={() => back(equation)}>
+        <button className="vertical back" onClick={() => back(equation)}>
           &#9166;
         </button>
-        <button onClick={() => calc(equation, setTotal)} className="vertical">
-          =
-        </button>
-        <button onClick={() => resetTotal()} className="vertical">
+
+        <button onClick={() => resetTotal()} className="vertical clear">
           <div>C</div>
           <div>L</div>
           <div>E</div>
           <div>A</div>
           <div>R</div>
+        </button>
+        <button className="vertical random" onClick={() => randomSym()}>
+          <div>R</div>
+          <div>A</div>
+          <div>N</div>
+          <div>D</div>
+          <div>O</div>
+          <div>M</div>
+        </button>
+        <button
+          onClick={() => calc(equation, setTotal)}
+          className="vertical equals"
+        >
+          =
         </button>
       </div>
       <div className="equation">
