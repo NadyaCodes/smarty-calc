@@ -34,11 +34,20 @@ export default function NumberContainer() {
     setEquation([0]);
   };
 
+  const back = (array) => {
+    const newArray = [...array];
+    newArray.pop();
+    setEquation(newArray);
+  };
+
   return (
     <div>
       <div className="calc-container">
         <div className="number-container">{numbersBlock}</div>
         <div className="symbols-container">{symbosBlock}</div>
+        <button className="vertical" onClick={() => back(equation)}>
+          &#9166;
+        </button>
         <button onClick={() => calc(equation, setTotal)} className="vertical">
           =
         </button>
@@ -59,8 +68,7 @@ export default function NumberContainer() {
       <div className="equation">
         {equation.length === 1 && equation[0] === 0 && "---"}
       </div>
-      <div className="equation">{equation.length === 0 && "---"}</div>
-
+      <div className="equation">{equation.length <= 0 && "---"}</div>
       <h2>Total: {total}</h2>
     </div>
   );

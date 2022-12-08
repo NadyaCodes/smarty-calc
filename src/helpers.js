@@ -24,6 +24,10 @@ export const calc = (array, settingFunc) => {
     array.splice(0, 1);
   }
 
+  if (typeof array[array.length - 1] === "string") {
+    array.pop();
+  }
+
   let nums = [];
   let syms = [];
   let num = "";
