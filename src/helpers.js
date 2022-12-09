@@ -20,10 +20,7 @@ const mathFunc = (symbol, current, next) => {
 };
 
 export const calc = (array, settingFunc) => {
-  if (array[0] === 0) {
-    array.splice(0, 1);
-  }
-  if (typeof array[0] === "string") {
+  if (array[0] === "---") {
     array.splice(0, 1);
   }
 

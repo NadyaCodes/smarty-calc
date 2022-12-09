@@ -5,7 +5,7 @@ import { numbersArray, symbolsArray, calc } from "./helpers";
 
 export default function NumberContainer() {
   const [total, setTotal] = useState(0);
-  const [equation, setEquation] = useState([0]);
+  const [equation, setEquation] = useState(["---"]);
 
   const numbersBlock = numbersArray.map((number, index) => {
     return (
@@ -31,10 +31,13 @@ export default function NumberContainer() {
 
   const resetTotal = () => {
     setTotal(0);
-    setEquation([0]);
+    setEquation(["---"]);
   };
 
   const back = (array) => {
+    if (array.length === 1) {
+      return setEquation(["---"]);
+    }
     const newArray = [...array];
     newArray.pop();
     setEquation(newArray);
@@ -57,14 +60,10 @@ export default function NumberContainer() {
 
   let equationDisplay = "";
 
-  if (equation[0] === 0) {
+  if (equation[0] === "---" && equation.length > 1) {
     equationDisplay = equation.slice(1);
   } else {
     equationDisplay = equation;
-  }
-
-  if (equationDisplay.length <= 0) {
-    equationDisplay = "---";
   }
 
   return (
