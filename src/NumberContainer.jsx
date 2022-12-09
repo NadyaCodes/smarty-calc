@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { numbersArray, symbolsArray, calc } from "./helpers";
 
 export default function NumberContainer() {
