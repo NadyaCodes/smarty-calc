@@ -4,16 +4,20 @@ import { symbolsArray } from "./helpers";
 export default function Button(props) {
   const { sign, setEquation, equation } = props;
   const checkAndEquate = () => {
-    if (symbolsArray.includes(sign) && equation.length <= 1) {
+    let testEquation = equation;
+    if (testEquation[0] === "---") {
+      testEquation.splice(0, 1);
+    }
+    if (symbolsArray.includes(sign) && testEquation.length < 1) {
       return alert("Please select a number first");
     }
     if (
       symbolsArray.includes(sign) &&
-      symbolsArray.includes(equation[equation.length - 1])
+      symbolsArray.includes(testEquation[testEquation.length - 1])
     ) {
       return alert("Please select a number");
     }
-    return setEquation([...equation, sign]);
+    return setEquation([...testEquation, sign]);
   };
   return <button onClick={() => checkAndEquate()}>{sign}</button>;
 }
