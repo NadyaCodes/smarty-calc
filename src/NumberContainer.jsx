@@ -43,13 +43,29 @@ export default function NumberContainer() {
   const randomSym = () => {
     const totalNums = [...numbersArray, ...symbolsArray];
     let symbolIndex = 0;
-    if (symbolsArray.includes(equation[equation.length - 1])) {
+    if (
+      symbolsArray.includes(equation[equation.length - 1]) ||
+      equation.length === 1 ||
+      equation.length === 0
+    ) {
       symbolIndex = Math.floor(Math.random() * numbersArray.length);
     } else {
       symbolIndex = Math.floor(Math.random() * totalNums.length);
     }
     return setEquation([...equation, totalNums[symbolIndex]]);
   };
+
+  let equationDisplay = "";
+
+  if (equation[0] === 0) {
+    equationDisplay = equation.slice(1);
+  } else {
+    equationDisplay = equation;
+  }
+
+  if (equationDisplay.length <= 0) {
+    equationDisplay = "---";
+  }
 
   return (
     <div>
@@ -82,16 +98,7 @@ export default function NumberContainer() {
           =
         </button>
       </div>
-      <div className="equation">
-        {equation.length > 1 && equation[0] === 0 && equation.slice(1)}
-      </div>
-      <div className="equation">
-        {equation.length > 1 && equation[0] !== 0 && equation}
-      </div>
-      <div className="equation">
-        {equation.length === 1 && equation[0] === 0 && "---"}
-      </div>
-      <div className="equation">{equation.length <= 0 && "---"}</div>
+      <div className="equation">{equationDisplay}</div>
       <h2>Total: {total}</h2>
     </div>
   );

@@ -23,6 +23,9 @@ export const calc = (array, settingFunc) => {
   if (array[0] === 0) {
     array.splice(0, 1);
   }
+  if (typeof array[0] === "string") {
+    array.splice(0, 1);
+  }
 
   if (typeof array[array.length - 1] === "string") {
     array.pop();
