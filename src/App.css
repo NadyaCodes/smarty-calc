@@ -3,6 +3,12 @@
   margin: auto;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .calc-container {
   display: flex;
   align-items: center;
@@ -83,6 +89,20 @@ button:active {
 }
 
 
-.animate {
-  color: blue
+.bouncy {
+  padding-left: 2rem;
+  font-size: xxx-large;
+  animation: bounce 3s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(-80vw, 30vh) rotate(50deg);
+  }
+  95% {
+    transform: translate(-4vw, -4vh) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
