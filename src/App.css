@@ -89,18 +89,40 @@ button:active {
 }
 
 
-.bouncy {
-  padding-left: 2rem;
+.bounce {
+
   font-size: xxx-large;
-  animation: bounce 3s ease-in-out;
+
 }
 
-@keyframes bounce {
+.bounce-right {
+  padding-left: 2rem;
+  animation: bounce-right 2s ease-in-out;
+}
+
+@keyframes bounce-right {
   0% {
-    transform: translate(-80vw, 30vh) rotate(50deg);
+    transform: translate(-60vw, 30vh) rotate(50deg) scale(10%);
   }
   95% {
-    transform: translate(-4vw, -4vh) rotate(5deg);
+    transform: translate(10vw, 10vh) rotate(-10deg) scale(550%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.bounce-left {
+  padding-right: 2rem;
+  animation: bounce-left 2s ease-in-out;
+}
+
+@keyframes bounce-left {
+  0% {
+    transform: translate(60vw, 30vh) rotate(-50deg) scale(10%);
+  }
+  95% {
+    transform: translate(-10vw, 10vh) rotate(10deg) scale(550%);
   }
   100% {
     transform: translate(0, 0);

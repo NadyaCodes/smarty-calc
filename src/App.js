@@ -5,8 +5,9 @@ function App() {
   return (
     <div className="App">
       <div className="header">
+        <div className="bounce bounce-left">🤓</div>
         <h1>Smarty Calc</h1>
-        <div className="bouncy">🤓</div>
+        <div className="bounce bounce-right">🤓</div>
       </div>
 
       <Calculator />
