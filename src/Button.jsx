@@ -13,15 +13,26 @@ export default function Button(props) {
     }
 
     if (symbolsArray.includes(sign) && testEquation.length < 1) {
-      return alert("Please select a number first");
+      return toast.error("Please select a number first!", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 1000,
+      });
     }
     if (
       symbolsArray.includes(sign) &&
       symbolsArray.includes(testEquation[testEquation.length - 1])
     ) {
-      return alert("Please select a number");
+      return toast.error("Please select a number!", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 1000,
+      });
     }
     return setEquation([...testEquation, sign]);
   };
-  return <button onClick={() => checkAndEquate()}>{sign}</button>;
+  return (
+    <div>
+      <ToastContainer />
+      <button onClick={() => checkAndEquate()}>{sign}</button>
+    </div>
+  );
 }
