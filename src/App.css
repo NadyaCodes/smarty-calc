@@ -1,12 +1,17 @@
 .App {
   text-align: center;
   margin: auto;
+
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Rubik Vinyl', cursive;
+  font-size: xx-large;
 }
 
 .calculator {
@@ -57,6 +62,7 @@ button {
   background-color: transparent;
   border: .1rem solid;
   border-color: rgb(0, 79, 79);
+
 }
 
 button:hover {
