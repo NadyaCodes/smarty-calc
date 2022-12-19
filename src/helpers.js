@@ -1,16 +1,16 @@
 export const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-export const symbolsArray = ["+", "-", "x", "\u00F7"];
+export const symbolsArray = ["\u002B", "\u2212", "\u2715", "\u00F7"];
 
 const mathFunc = (symbol, current, next) => {
   const firstNum = parseFloat(current);
   const secondNum = parseFloat(next);
   switch (symbol) {
-    case "+":
+    case "\u002B":
       return firstNum + secondNum;
-    case "-":
+    case "\u2212":
       return firstNum - secondNum;
-    case "x":
+    case "\u2715":
       return firstNum * secondNum;
     case "\u00F7":
       return firstNum / secondNum;

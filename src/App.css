@@ -125,13 +125,11 @@ button:active {
 
 
 .bounce {
-
-  font-size: xxx-large;
-
+  font-size: 5rem;
 }
 
 .bounce-right {
-  padding-left: 2rem;
+  margin-left: 2rem;
   animation: bounce-right 2.5s ease-in-out;
 }
 
@@ -148,7 +146,7 @@ button:active {
 }
 
 .bounce-left {
-  padding-right: 2rem;
+  margin-right: 2rem;
   animation: bounce-left 2.5s ease-in-out;
 }
 
@@ -162,4 +160,26 @@ button:active {
   75% {
     transform: translate(0, 0);
   }
+}
+
+.wiggle {
+  animation: wiggle 3s linear 3
+}
+
+@keyframes wiggle {
+ 0% {
+  transform: rotate(0deg);
+ }
+ 25% {
+  transform: rotate(50deg);
+ }
+ 50% {
+  transform: rotate(0deg);
+ }
+ 75% {
+  transform: rotate(-50deg);
+ }
+ 100% {
+  transform: rotate(0deg);
+ }
 }
