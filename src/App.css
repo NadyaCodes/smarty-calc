@@ -30,7 +30,7 @@ html {
   width: fit-content;
   padding: 2rem;
   -webkit-box-shadow: 0px 10px 13px -7px #000000, -4px 9px 21px 10px rgba(5,66,92,0.45); 
-  box-shadow: 0px 10px 13px -7px #000000, -4px 9px 21px 10px rgba(5,66,92,0.45);
+  box-shadow: 0px 10px 13px -7px #000000, -4px 9px 21px 10px #05425c73;
 }
 
 @keyframes fade-in {
@@ -47,9 +47,10 @@ html {
 }
 
 .number-container {
-  border: .1rem solid rgba(5,66,92,0.75);
-  border-radius: .45rem;
-  background-color: rgb(224, 255, 255);
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 4px 1px rgba(5,66,92,0.67); 
+  box-shadow: 0px 10px 13px -7px #000000, 0px 0px 4px 1px rgba(5,66,92,0.67);
+  border-radius: .3rem;
+  background-color: rgba(205, 240, 255, 0.67);
   max-width: 50%;
   padding: 1.5rem;
   display: grid;
@@ -58,9 +59,10 @@ html {
 }
 
 .symbols-container {
-  background-color: rgb(216, 252, 240);
-  border: .1rem solid rgba(5,66,92,0.75);;
-  border-radius: .45rem;
+  background-color: rgba(205, 255, 205, 0.67);
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 4px 1px rgba(5,66,92,0.67); 
+  box-shadow: 0px 10px 13px -7px #000000, 0px 0px 4px 1px rgba(5,66,92,0.67);
+  border-radius: .3rem;
   display: grid;
   gap: 2rem;
   margin-left: 2rem;
@@ -94,6 +96,8 @@ button:active {
   margin-right: 0;
   border-radius: .2rem;
   height: 21rem;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 4px 1px rgba(5,66,92,0.67); 
+  box-shadow: 0px 10px 13px -7px #000000, 0px 0px 4px 1px rgba(5,66,92,0.67);
 }
 
 .equation {
@@ -102,21 +106,21 @@ button:active {
 }
 
 .back {
-  background-color: rgb(241, 87, 87);
+  background-color: rgba(250, 82, 141, 0.67);
   padding-right: 3rem;
   padding-left: .5rem
 }
 
 .clear {
-  background-color: rgb(176, 108, 239);
+  background-color: rgba(195, 74, 255, 0.67);
 }
 
 .random {
-  background-color: rgb(49, 240, 49);
+  background-color: rgba(108, 247, 182, 0.67);
 }
 
 .equals {
-  background-color: rgb(173, 255, 50);
+  background-color: rgba(248, 240, 105, 0.67);
 }
 
 
