@@ -54,9 +54,9 @@ html {
   border-radius: .3rem;
   background-color: rgba(200, 231, 244, 0.851);
   max-width: 50%;
-  padding: 1.5rem;
+  padding: 1rem;
   display: grid;
-  gap: 2rem;
+  gap: .5rem;
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -66,9 +66,9 @@ html {
   box-shadow: 0px 10px 13px -7px #000000, 0px 0px 4px 1px rgba(5,66,92,0.67);
   border-radius: .3rem;
   display: grid;
-  gap: 2rem;
+  gap: .5rem;
   margin-left: 2rem;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 button {
@@ -101,7 +101,7 @@ button:active {
   margin-left: 2rem;
   margin-right: 0;
   border-radius: .2rem;
-  height: 21rem;
+  height: 15.5rem;
   -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 4px 1px rgba(5,66,92,0.67); 
   box-shadow: 0px 10px 13px -7px #000000, 0px 0px 4px 1px rgba(5,66,92,0.67);
 }
@@ -119,10 +119,12 @@ button:active {
 
 .clear {
   background-color: rgba(195, 74, 255, 0.67);
+  font-size: x-large;
 }
 
 .random {
   background-color: rgba(108, 247, 182, 0.67);
+  font-size: x-large;
 }
 
 .equals {
