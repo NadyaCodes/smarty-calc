@@ -92,6 +92,11 @@ button:active {
   background-color: rgb(244, 198, 244);
 }
 
+#root > div > div.calculator > div > div.calc-container > div.symbols-container > div:nth-child(3) > button {
+  font-size: 1.4rem;
+  font-weight: bold
+}
+
 .vertical {
   margin-left: 2rem;
   margin-right: 0;
