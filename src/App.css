@@ -37,9 +37,9 @@ html {
 
 @keyframes fade-in {
   0% { opacity: 0;}
-  90% { opacity: 0; transform: scale(100%) rotate(60deg)}
-  95% { opacity: 50; transform: scale(170%) rotate(30deg) }
-  100% {opacity: 100; transform: scale(100%) rotate(0deg)}
+  80% { opacity: 0; transform: scale(100%) rotate(60deg)}
+  85% { opacity: 50; transform: scale(170%) rotate(30deg) }
+  90% {opacity: 100; transform: scale(100%) rotate(0deg)}
 }
 
 .calc-container {
@@ -139,34 +139,48 @@ button:active {
 
 .bounce-right {
   margin-left: 2rem;
-  animation: bounce-right 2.5s ease-in-out;
+  animation: bounce-right 2.5s linear;
 }
 
 @keyframes bounce-right {
   0% {
     transform: translate(-60vw, 30vh) rotate(50deg) scale(10%);
   }
-  70% {
-    transform: translate(10vw, 10vh) rotate(-10deg) scale(550%);
+  60% {
+    transform: translate(-21vw, 10vh) rotate(-10deg) scale(400%);
   }
-  75% {
+  80% {
+    transform: translate(-21vw, 30vh) rotate(-30deg) scale(3500%);
+  }
+
+  84% {
+    transform: translate(-1000vw, 30vh) rotate(0deg) scale(3500%);
+  }
+
+  100% {
     transform: translate(0, 0);
   }
 }
 
 .bounce-left {
   margin-right: 2rem;
-  animation: bounce-left 2.5s ease-in-out;
+  animation: bounce-left 2.5s linear;
 }
 
 @keyframes bounce-left {
   0% {
     transform: translate(60vw, 30vh) rotate(-50deg) scale(10%);
   }
-  70% {
-    transform: translate(-10vw, 10vh) rotate(10deg) scale(550%);
+  60% {
+    transform: translate(21vw, 10vh) rotate(10deg) scale(400%);
   }
-  75% {
+  80% {
+    transform: translate(21vw, 20vh) rotate(10deg) scale(400%);
+  }
+  84% {
+    transform: translate(1000vw, 20vh) rotate(10deg) scale(400%);
+  }
+  100% {
     transform: translate(0, 0);
   }
 }
