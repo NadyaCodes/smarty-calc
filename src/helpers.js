@@ -26,6 +26,9 @@ export const calc = (array, settingFunc) => {
 
   if (typeof array[array.length - 1] === "string") {
     array.pop();
+    if (typeof array[array.length - 1] === "string") {
+      array.pop();
+    }
   }
 
   let nums = [];
