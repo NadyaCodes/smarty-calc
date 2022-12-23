@@ -44,28 +44,24 @@ export default function NumberContainer() {
   };
 
   const randomSym = () => {
-    const totalNums = [...numbersArray, ...symbolsArray];
+    let modifiedNumbersArray = numbersArray.slice(0, numbersArray.length - 2);
+    const totalNums = [...modifiedNumbersArray, ...symbolsArray];
     let symbolIndex = 0;
     if (
       symbolsArray.includes(equation[equation.length - 1]) ||
       equation.length === 1 ||
       equation.length === 0
     ) {
-      symbolIndex = Math.floor(Math.random() * numbersArray.length);
+      symbolIndex = Math.floor(Math.random() * modifiedNumbersArray.length);
     } else {
       symbolIndex = Math.floor(Math.random() * totalNums.length);
     }
-    return setEquation([...equation, totalNums[symbolIndex]]);
+    if (equation[0] === "---") {
+      return setEquation([totalNums[symbolIndex]]);
+    } else {
+      return setEquation([...equation, totalNums[symbolIndex]]);
+    }
   };
-
-  // let equationDisplay = "";
-
-  // if (equation[0] === "---" && equation.length > 1) {
-  //   equationDisplay = equation.slice(1);
-  // } else {
-  //   equationDisplay = equation;
-  // }
-  // console.log(equation);
 
   let equationDisplay = equation.map((eq, index) => {
     if (symbolsArray.includes(eq)) {
