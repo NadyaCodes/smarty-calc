@@ -1,5 +1,5 @@
 import React from "react";
-import { symbolsArray } from "./helpers";
+import { numbersArray, symbolsArray } from "./helpers";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,6 +23,12 @@ export default function Button(props) {
       symbolsArray.includes(testEquation[testEquation.length - 1])
     ) {
       return toast.error("Please select a number!", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 1000,
+      });
+    }
+    if (sign === "-" && numbersArray.includes(equation[equation.length - 1])) {
+      return toast.error("Cannot have negative in middle of number", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 1000,
       });
