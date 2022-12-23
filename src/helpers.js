@@ -1,4 +1,4 @@
-export const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+export const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, ".", "-"];
 
 export const symbolsArray = ["\u002B", "\u2212", "\u2715", "\u00F7"];
 
