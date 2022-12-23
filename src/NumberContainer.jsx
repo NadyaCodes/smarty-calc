@@ -58,13 +58,32 @@ export default function NumberContainer() {
     return setEquation([...equation, totalNums[symbolIndex]]);
   };
 
-  let equationDisplay = "";
+  // let equationDisplay = "";
 
-  if (equation[0] === "---" && equation.length > 1) {
-    equationDisplay = equation.slice(1);
-  } else {
-    equationDisplay = equation;
-  }
+  // if (equation[0] === "---" && equation.length > 1) {
+  //   equationDisplay = equation.slice(1);
+  // } else {
+  //   equationDisplay = equation;
+  // }
+  // console.log(equation);
+
+  let equationDisplay = equation.map((eq, index) => {
+    if (symbolsArray.includes(eq)) {
+      return (
+        <span className="symbol" key={index}>
+          {eq}
+        </span>
+      );
+    } else if (eq === "-") {
+      return (
+        <span className="negative" key={index}>
+          {eq}
+        </span>
+      );
+    } else {
+      return <span key={index}>{eq}</span>;
+    }
+  });
 
   return (
     <div>

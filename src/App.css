@@ -71,6 +71,17 @@ html {
   padding: 1rem;
 }
 
+.symbol {
+  font-weight: 900;
+  color: rgba(157, 227, 194, 0.67)
+}
+
+.negative {
+  font-size: x-large;
+  position: relative;
+  bottom: .41rem;
+}
+
 button {
   border-radius: 20%;
   margin: auto;
