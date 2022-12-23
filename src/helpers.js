@@ -37,7 +37,7 @@ export const calc = (array, settingFunc) => {
       num += array[i];
     }
     if (typeof array[i] === "string") {
-      if (array[i] === ".") {
+      if (array[i] === "." || array[i] === "-") {
         num += array[i];
       } else {
         syms.push(array[i]);
