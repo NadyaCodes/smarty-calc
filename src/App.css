@@ -104,7 +104,7 @@ button:active {
 }
 
 #root > div > div.calculator > div > div.calc-container > div.symbols-container > div:nth-child(3) > button {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold
 }
 
