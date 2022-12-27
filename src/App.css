@@ -155,17 +155,17 @@ button:active {
 
 @keyframes bounce-right {
   0% {
-    transform: translate(-60vw, 30vh) rotate(50deg) scale(10%);
+    transform: translate(-100vw, 30vh) rotate(50deg) scale(10%);
   }
   60% {
-    transform: translate(-21vw, 10vh) rotate(-10deg) scale(400%);
+    transform: translate(-18rem, 10vh) rotate(-10deg) scale(400%);
   }
   80% {
-    transform: translate(-21vw, 30vh) rotate(-30deg) scale(3500%);
+    transform: translate(-18rem, 30vh) rotate(-30deg) scale(3500%);
   }
 
   84% {
-    transform: translate(-1000vw, 30vh) rotate(0deg) scale(3500%);
+    transform: translate(-1000rem, 30vh) rotate(0deg) scale(3500%);
   }
 
   100% {
@@ -180,16 +180,16 @@ button:active {
 
 @keyframes bounce-left {
   0% {
-    transform: translate(60vw, 30vh) rotate(-50deg) scale(10%);
+    transform: translate(100vw, 30vh) rotate(-50deg) scale(10%);
   }
   60% {
-    transform: translate(21vw, 10vh) rotate(10deg) scale(400%);
+    transform: translate(18rem, 10vh) rotate(10deg) scale(400%);
   }
   80% {
-    transform: translate(21vw, 20vh) rotate(10deg) scale(400%);
+    transform: translate(18rem, 20vh) rotate(10deg) scale(400%);
   }
   84% {
-    transform: translate(1000vw, 20vh) rotate(10deg) scale(400%);
+    transform: translate(1000rem, 20vh) rotate(10deg) scale(400%);
   }
   100% {
     transform: translate(0, 0);
