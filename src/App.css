@@ -164,6 +164,10 @@ button:active {
   color: black;
 }
 
+.hide {
+  display: none;
+}
+
 .bounce-right {
   margin-left: 2rem;
   animation: bounce-right 2.5s linear;

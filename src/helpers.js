@@ -19,7 +19,7 @@ const mathFunc = (symbol, current, next) => {
   }
 };
 
-export const calc = (array, settingFunc) => {
+export const calc = (array, settingFunc, showFunc) => {
   if (array[0] === "---") {
     array.splice(0, 1);
   }
@@ -56,5 +56,6 @@ export const calc = (array, settingFunc) => {
   for (let i = 1; i < nums.length; i++) {
     answer = mathFunc(syms[i - 1], answer, nums[i]);
   }
+  showFunc(false);
   return settingFunc(answer);
 };

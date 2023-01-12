@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "./Button";
 import { useState } from "react";
 import { numbersArray, symbolsArray, calc } from "./helpers";
@@ -7,6 +7,7 @@ import confetti from "canvas-confetti";
 export default function NumberContainer() {
   const [total, setTotal] = useState(0);
   const [equation, setEquation] = useState(["---"]);
+  const [hideConfetti, setHideConfetti] = useState(true);
 
   const numbersBlock = numbersArray.map((number, index) => {
     return (
@@ -15,6 +16,7 @@ export default function NumberContainer() {
         sign={number}
         setEquation={setEquation}
         equation={equation}
+        setHideConfetti={setHideConfetti}
       />
     );
   });
@@ -26,6 +28,7 @@ export default function NumberContainer() {
         sign={symbol}
         setEquation={setEquation}
         equation={equation}
+        setHideConfetti={setHideConfetti}
       />
     );
   });
@@ -33,6 +36,7 @@ export default function NumberContainer() {
   const resetTotal = () => {
     setTotal(0);
     setEquation(["---"]);
+    setHideConfetti(true);
   };
 
   const back = (array) => {
@@ -42,6 +46,7 @@ export default function NumberContainer() {
     const newArray = [...array];
     newArray.pop();
     setEquation(newArray);
+    setHideConfetti(true);
   };
 
   const randomSym = () => {
@@ -82,6 +87,14 @@ export default function NumberContainer() {
     }
   });
 
+  // useEffect(() => {
+  //   if (calc(equation, setTotal) === total) {
+  //     setHideConfetti(false);
+  //   } else {
+  //     setHideConfetti(true);
+  //   }
+  // }, [equation, total]);
+
   return (
     <div>
       <div className="calc-container">
@@ -98,7 +111,13 @@ export default function NumberContainer() {
           <div>A</div>
           <div>R</div>
         </button>
-        <button className="vertical random" onClick={() => randomSym()}>
+        <button
+          className="vertical random"
+          onClick={() => {
+            randomSym();
+            setHideConfetti(true);
+          }}
+        >
           <div>R</div>
           <div>A</div>
           <div>N</div>
@@ -107,31 +126,36 @@ export default function NumberContainer() {
           <div>M</div>
         </button>
       </div>
-      <button onClick={() => calc(equation, setTotal)} className="equals">
+      <button
+        onClick={() => calc(equation, setTotal, setHideConfetti)}
+        className="equals"
+      >
         =
       </button>
       <div className="equation">{equationDisplay}</div>
       <h2>Total: {total}</h2>
-      <button
-        className="confetti"
-        onClick={
-          total <= 3000
-            ? () =>
-                confetti({
-                  particleCount: total,
-                  spread: 170,
-                  origin: { y: 0.9 },
-                })
-            : () =>
-                confetti({
-                  particleCount: 3000,
-                  spread: 170,
-                  origin: { y: 0.9 },
-                })
-        }
-      >
-        CONFETTI IT!
-      </button>
+      <div className={`${hideConfetti ? "hide" : ""}`}>
+        <button
+          className="confetti"
+          onClick={
+            total <= 3000
+              ? () =>
+                  confetti({
+                    particleCount: total,
+                    spread: 170,
+                    origin: { y: 0.9 },
+                  })
+              : () =>
+                  confetti({
+                    particleCount: 3000,
+                    spread: 170,
+                    origin: { y: 0.9 },
+                  })
+          }
+        >
+          CONFETTI IT!
+        </button>
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Button(props) {
-  const { sign, setEquation, equation } = props;
+  const { sign, setEquation, equation, setHideConfetti } = props;
   const checkAndEquate = () => {
     let testEquation = equation;
     if (testEquation[0] === "---") {
@@ -33,6 +33,7 @@ export default function Button(props) {
         autoClose: 1000,
       });
     }
+    setHideConfetti(true);
     return setEquation([...testEquation, sign]);
   };
   return (
