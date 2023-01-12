@@ -105,13 +105,10 @@ export default function NumberContainer() {
           <div>O</div>
           <div>M</div>
         </button>
-        <button
-          onClick={() => calc(equation, setTotal)}
-          className="vertical equals"
-        >
-          =
-        </button>
       </div>
+      <button onClick={() => calc(equation, setTotal)} className="equals">
+        =
+      </button>
       <div className="equation">{equationDisplay}</div>
       <h2>Total: {total}</h2>
     </div>
