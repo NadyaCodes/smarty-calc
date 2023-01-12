@@ -114,8 +114,20 @@ export default function NumberContainer() {
       <h2>Total: {total}</h2>
       <button
         className="confetti"
-        onClick={() =>
-          confetti({ particleCount: total, spread: 170, origin: { y: 0.9 } })
+        onClick={
+          total <= 3000
+            ? () =>
+                confetti({
+                  particleCount: total,
+                  spread: 170,
+                  origin: { y: 0.9 },
+                })
+            : () =>
+                confetti({
+                  particleCount: 3000,
+                  spread: 170,
+                  origin: { y: 0.9 },
+                })
         }
       >
         CONFETTI IT!
