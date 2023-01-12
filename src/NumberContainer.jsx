@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import { useState } from "react";
 import { numbersArray, symbolsArray, calc } from "./helpers";
+import confetti from "canvas-confetti";
 
 export default function NumberContainer() {
   const [total, setTotal] = useState(0);
@@ -63,20 +64,6 @@ export default function NumberContainer() {
     }
   };
 
-  const confetti = (num) => {
-    console.log(num);
-    // console.log(equation);
-    // console.log(equation.reverse());
-    // console.log(equation);
-    // console.log(eq);
-    // setEquation(eq.reverse());
-    // // document
-    // //   .getElementsByClassName("equation")
-    // //   .contentWindow.location.reload(true);
-    // console.log(document.getElementsByClassName("equation"));
-    // console.log(eq);
-  };
-
   let equationDisplay = equation.map((eq, index) => {
     if (symbolsArray.includes(eq)) {
       return (
@@ -119,26 +106,18 @@ export default function NumberContainer() {
           <div>O</div>
           <div>M</div>
         </button>
-        {/* <button
-          className="vertical reverse"
-          onClick={() => confetti(total)}
-        >
-          <div>C</div>
-          <div>O</div>
-          <div>N</div>
-          <div>F</div>
-          <div>E</div>
-          <div>T</div>
-          <div>T</div>
-          <div>I</div>
-        </button> */}
       </div>
       <button onClick={() => calc(equation, setTotal)} className="equals">
         =
       </button>
       <div className="equation">{equationDisplay}</div>
       <h2>Total: {total}</h2>
-      <button className="confetti" onClick={() => confetti(total)}>
+      <button
+        className="confetti"
+        onClick={() =>
+          confetti({ particleCount: total, spread: 170, origin: { y: 0.9 } })
+        }
+      >
         CONFETTI IT!
       </button>
     </div>
